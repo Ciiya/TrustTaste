@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import './global.css'
 
 export default function App() {
   return (
     <View className='flex-1  items-center justify-center'>
+      <Ionicons name="checkmark-circle" size={32} color="green"/>
       <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
