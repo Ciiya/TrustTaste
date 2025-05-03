@@ -1,0 +1,20 @@
+# Node modules
+node_modules
+
+# Builds y salida
+dist
+build
+web-build
+
+# Configuración de plataformas
+android
+ios
+
+# Archivos de configuración
+babel.config.js
+metro.config.js
+*.config.js
+
+# Archivos ignorados comunes
+package-lock.json
+yarn.lock
