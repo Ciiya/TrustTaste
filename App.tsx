@@ -1,4 +1,5 @@
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
+import { Camera } from "lucide-react-native";
 import { Text, View } from 'react-native';
 
 export default function App() {
