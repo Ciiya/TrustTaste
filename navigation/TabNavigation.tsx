@@ -7,9 +7,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 
-import { Home, Settings } from 'lucide-react-native';
+import { Home, ScanBarcode, Settings } from 'lucide-react-native';
 import { Text } from '@/components/ui/text';
 import { Box } from '@/components/ui/box';
+import CameraManager from './camera/CameraManager';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,6 +31,17 @@ const TabNavigator = () => {
               tabBarIcon: () => (
                 <View className="flex-1 flex-coll pt-2">
                   <Home />
+                </View>
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Camera"
+            component={CameraManager}
+            options={{
+              tabBarIcon: () => (
+                <View className="flex-1 flex-coll pt-2">
+                  <ScanBarcode />
                 </View>
               ),
             }}
