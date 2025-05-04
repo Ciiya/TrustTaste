@@ -4,11 +4,11 @@ import { SafeAreaView, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-import FirstPage from './FirstPage';
-import SecondPage from './SecondPage';
+import FirstPage from './app/FirstPage';
+import SecondPage from './app/Settings';
 
 import { Home, ScanBarcode, Settings } from 'lucide-react-native';
-import CameraManager from './camera/CameraManager';
+import CameraManager from './app/camera/CameraManager';
 
 const Tab = createBottomTabNavigator();
 
