@@ -5,6 +5,7 @@ module.exports = {
   darkMode: "media",
   content: [
    "./*.{js,jsx,ts,tsx}",
+   "*/*.{js,jsx,ts,tsx}",
     "App.{tsx,jsx,ts,js}",
     "index.{tsx,jsx,ts,js}",
     "src/**/*.{tsx,jsx,ts,js}",

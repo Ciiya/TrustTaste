@@ -1,13 +1,10 @@
-import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
-import { Camera } from "lucide-react-native";
-import { Text, View } from 'react-native';
+import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
+import TabNavigator from './navigation/TabNavigation';
 
 export default function App() {
   return (
     <GluestackUIProvider mode="light">
-      <View className='flex-1  items-center justify-center'>
-        <Text>Open up App.tsx to start working on your app!</Text>
-      </View>
+      <TabNavigator />
     </GluestackUIProvider>
   );
 }
