@@ -8,8 +8,6 @@ import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
 
 import { Home, ScanBarcode, Settings } from 'lucide-react-native';
-import { Text } from '@/components/ui/text';
-import { Box } from '@/components/ui/box';
 import CameraManager from './camera/CameraManager';
 
 const Tab = createBottomTabNavigator();
