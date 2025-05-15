@@ -10,5 +10,12 @@
         "./tailwind.config.js"
       ]
     }
-  }
+  },
+  "include": [
+    "src",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "types/env.d.ts",
+    "nativewind-env.d.ts"
+  ]
 }
