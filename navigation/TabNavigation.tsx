@@ -4,11 +4,11 @@ import { SafeAreaView, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-import FirstPage from './app/FirstPage';
 import SecondPage from './app/Settings';
 
 import { Home, ScanBarcode, Settings } from 'lucide-react-native';
 import CameraManager from './app/camera/CameraManager';
+import FirstPage from './app/FirstPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +19,7 @@ const TabNavigator = () => {
         <Tab.Navigator
           screenOptions={{
             tabBarShowLabel: false,
-            tabBarStyle: { backgroundColor: '#D3D3D3' },
+            tabBarStyle: { backgroundColor: '#FFFF' },
           }}
         >
           <Tab.Screen
