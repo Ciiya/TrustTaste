@@ -7,13 +7,19 @@ module.exports = function (api) {
       "nativewind/babel",
     ],
 
-    plugins: [["module-resolver", {
+    plugins: [
+      ["module-resolver", {
       root: ["./"],
 
       alias: {
         "@": "./",
         "tailwind.config": "./tailwind.config.js"
-      }
-    }]]
+      }}],
+     ['module:react-native-dotenv',
+      {
+        moduleName: '@env',
+        path: '.env',  
+      }]
+  ]
   };
 };
