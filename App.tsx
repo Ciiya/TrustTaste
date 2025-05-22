@@ -1,3 +1,4 @@
+import React from 'react';
 import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
 import TabNavigator from './navigation/TabNavigation';
 import { Session } from '@supabase/supabase-js';
@@ -18,7 +19,7 @@ export default function App() {
 
   return (
     <GluestackUIProvider mode="light">
-      {!session && <StartPage />}
+      {session == null && <StartPage />}
       {session && session.user && <TabNavigator />}
     </GluestackUIProvider>
   );

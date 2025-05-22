@@ -5,7 +5,6 @@ module.exports = function (api) {
     presets: [
       ["babel-preset-expo", { jsxImportSource: "nativewind" }],
       "nativewind/babel",
-      "@babel/preset-env",
       "@babel/preset-react",
       "@babel/preset-typescript"
     ],
@@ -18,8 +17,7 @@ module.exports = function (api) {
         "@": "./",
         "tailwind.config": "./tailwind.config.js"
       }}],
-     ['module:react-native-dotenv',
-      {
+      ['module:react-native-dotenv', {
         moduleName: '@env',
         path: '.env',  
       }]

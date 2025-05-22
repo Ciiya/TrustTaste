@@ -1,5 +1,5 @@
 import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 type Props = PropsWithChildren<{
@@ -10,22 +10,22 @@ type Props = PropsWithChildren<{
 const AlergenicsModal = ({ isVisible, children, onClose }: Props) => {
   return (
     <View>
-    <Modal animationType="slide" transparent={true} visible={isVisible}>
-      <View style={styles.modalContent}>
-        <View style={styles.titleContainer}>
+      <Modal animationType="slide" transparent={true} visible={isVisible}>
+        <View style={styles.modalContent}>
+          <View style={styles.titleContainer}>
             <Text style={styles.title}>Results</Text>
             <Pressable onPress={onClose}>
-                <MaterialIcons name="close" color="#fff" size={22} />
+              <MaterialIcons name="close" color="#fff" size={22} />
             </Pressable>
+          </View>
+          {children}
         </View>
-        {children}
-      </View>
-    </Modal>
+      </Modal>
     </View>
   );
-}
+};
 
-export default AlergenicsModal
+export default AlergenicsModal;
 
 //Colors: Bone White for content and title, and green for title
 const styles = StyleSheet.create({

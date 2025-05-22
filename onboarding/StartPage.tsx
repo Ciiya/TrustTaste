@@ -1,16 +1,12 @@
+import React from 'react';
 import { View } from 'react-native';
-
 import { Image } from '@/components/ui/image';
 import { Input, InputField, InputSlot } from '@/components/ui/input';
-import { LockOpen, LogIn, User } from 'lucide-react-native';
-import React, { useState } from 'react';
-import {
-  Button,
-  ButtonIcon,
-  ButtonSpinner,
-  ButtonText,
-} from '@/components/ui/button';
+import { LockOpen, LogIn, NotebookPen, User } from 'lucide-react-native';
+import { useState } from 'react';
+import { Button, ButtonIcon, ButtonText } from '@/components/ui/button';
 import { useEmailSignIn } from './hooks/index';
+import { RegisterPage } from './RegisterPage';
 
 const StartPage = () => {
   const icon = require('assets/adaptive-icon.png');
@@ -52,6 +48,14 @@ const StartPage = () => {
         >
           <ButtonIcon as={LogIn} />
           <ButtonText>Login</ButtonText>
+        </Button>
+        <Button
+          onPress={RegisterPage}
+          size="lg"
+          className="rounded-xl px-4 py-2 w-64"
+        >
+          <ButtonIcon as={NotebookPen} />
+          <ButtonText>Register</ButtonText>
         </Button>
       </View>
     </View>

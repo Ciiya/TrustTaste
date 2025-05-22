@@ -1,25 +1,30 @@
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import AlergenicsModal from './AlergenicsModal';
 
 const CameraManager = () => {
-
   const [scanned, setScanned] = useState(false);
   const [permission, requestPermission] = useCameraPermissions();
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
-  const handleBarCodeScanned = ({ type, data }: { type: string; data: string }) => {
-    if (type === "ean13" || type === "ean8") {
+  const handleBarCodeScanned = ({
+    type,
+    data,
+  }: {
+    type: string;
+    data: string;
+  }) => {
+    if (type === 'ean13' || type === 'ean8') {
       setScanned(true);
-      setIsModalVisible(true)
+      setIsModalVisible(true);
       console.log(data);
     }
   };
 
   const onModalClose = () => {
     setIsModalVisible(false);
-    setScanned(false)
+    setScanned(false);
   };
 
   if (!permission) {
@@ -29,7 +34,9 @@ const CameraManager = () => {
   if (!permission.granted) {
     return (
       <View style={styles.container}>
-        <Text style={styles.message}>We need your permission to show the camera</Text>
+        <Text style={styles.message}>
+          We need your permission to show the camera
+        </Text>
         <Button onPress={requestPermission} title="Grant permission" />
       </View>
     );
@@ -37,14 +44,14 @@ const CameraManager = () => {
 
   return (
     <View style={styles.container}>
-      <CameraView 
-        style={styles.camera} 
+      <CameraView
+        style={styles.camera}
         barcodeScannerSettings={{
-          barcodeTypes: ['ean13', "ean8"],
+          barcodeTypes: ['ean13', 'ean8'],
         }}
         onBarcodeScanned={scanned ? undefined : handleBarCodeScanned}
       >
-        <AlergenicsModal isVisible={isModalVisible} onClose={onModalClose}/>
+        <AlergenicsModal isVisible={isModalVisible} onClose={onModalClose} />
         <View style={styles.buttonContainer} />
       </CameraView>
     </View>
