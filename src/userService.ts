@@ -1,5 +1,7 @@
 // src/services/userService.js
 import supabase from '../supabase/supabaseClient';
+import { fetchData } from '@/onboarding/hooks/fetchHelpers';
+//import { Allergy } from './types';
 
 export interface User {
   id?: number;
@@ -8,7 +10,7 @@ export interface User {
 }
 
 export interface Allergy {
-    id?: number;
+    id: number;
     name: string;
 }
 
@@ -32,3 +34,11 @@ export const updateUser = async (id: number, updates: Partial<User>) =>
 export const deleteUser = async (id: number) =>
   await supabase.from('users').delete().eq('id', id);
 
+
+export const getAllAllergies = async () =>
+  fetchData<Allergy[]>(async () => await supabase.from('allergies').select('*'));
+
+export const getAllergyById = async (id: string) =>
+  fetchData<Allergy>(async () =>
+    await supabase.from('allergies').select('*').eq('id', id).single()
+  );
