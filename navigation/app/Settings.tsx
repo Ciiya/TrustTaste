@@ -13,18 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 // 👇 nur falls du wirklich eine eigene types.ts hast:
 import { RootStackParamList } from '../types';
-import {
-  Pencil,
-  Globe,
-  Moon,
-  CheckSquare,
-  AtSign,
-  Bell,
-  Flag,
-  Mail,
-  Star,
-  ChevronRight,
-} from 'lucide-react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
@@ -52,7 +41,7 @@ export default function Settings() {
 
             <TouchableOpacity onPress={() => {}}>
               <View style={styles.profileAction}>
-                <Pencil color="#ffffff" size={16} />
+                <MaterialIcons name="create" color="white" size={20} />
               </View>
             </TouchableOpacity>
           </View>
@@ -72,21 +61,20 @@ export default function Settings() {
 
           <TouchableOpacity onPress={() => {}} style={styles.row}>
             <View style={[styles.rowIcon, { backgroundColor: '#fe9400' }]}>
-              <Globe color="#ffffff" size={20} />
+              <MaterialIcons name="language" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Language</Text>
             <View style={styles.rowSpacer} />
-            <ChevronRight color="#C6C6C6" size={20} />
           </TouchableOpacity>
 
           <View style={styles.row}>
             <View style={[styles.rowIcon, { backgroundColor: '#007afe' }]}>
-              <Moon color="#ffffff" size={20} />
+              <MaterialIcons name="dark-mode" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Dark Mode</Text>
             <View style={styles.rowSpacer} />
             <Switch
-              onValueChange={(darkMode) => setForm({ ...form, darkMode })}
+              onValueChange={darkMode => setForm({ ...form, darkMode })}
               value={form.darkMode}
             />
           </View>
@@ -96,21 +84,20 @@ export default function Settings() {
             style={styles.row}
           >
             <View style={[styles.rowIcon, { backgroundColor: '#32c759' }]}>
-              <CheckSquare color="#ffffff" size={20} />
+              <MaterialIcons name="edit-square" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Edit Dietary Profile</Text>
             <View style={styles.rowSpacer} />
-            <ChevronRight color="#C6C6C6" size={20} />
           </TouchableOpacity>
 
           <View style={styles.row}>
             <View style={[styles.rowIcon, { backgroundColor: '#38C959' }]}>
-              <AtSign color="#ffffff" size={20} />
+              <MaterialIcons name="email" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Email Notifications</Text>
             <View style={styles.rowSpacer} />
             <Switch
-              onValueChange={(emailNotifications) =>
+              onValueChange={emailNotifications =>
                 setForm({ ...form, emailNotifications })
               }
               value={form.emailNotifications}
@@ -119,12 +106,12 @@ export default function Settings() {
 
           <View style={styles.row}>
             <View style={[styles.rowIcon, { backgroundColor: '#38C959' }]}>
-              <Bell color="#ffffff" size={20} />
+              <MaterialIcons name="notifications" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Push Notifications</Text>
             <View style={styles.rowSpacer} />
             <Switch
-              onValueChange={(pushNotifications) =>
+              onValueChange={pushNotifications =>
                 setForm({ ...form, pushNotifications })
               }
               value={form.pushNotifications}
@@ -137,29 +124,26 @@ export default function Settings() {
 
           <TouchableOpacity onPress={() => {}} style={styles.row}>
             <View style={[styles.rowIcon, { backgroundColor: '#8e8d91' }]}>
-              <Flag color="#ffffff" size={20} />
+              <MaterialIcons name="outlined-flag" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Report Bug</Text>
             <View style={styles.rowSpacer} />
-            <ChevronRight color="#C6C6C6" size={20} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => {}} style={styles.row}>
             <View style={[styles.rowIcon, { backgroundColor: '#007afe' }]}>
-              <Mail color="#ffffff" size={20} />
+              <MaterialIcons name="email" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Contact Us</Text>
             <View style={styles.rowSpacer} />
-            <ChevronRight color="#C6C6C6" size={20} />
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => {}} style={styles.row}>
             <View style={[styles.rowIcon, { backgroundColor: '#32c759' }]}>
-              <Star color="#ffffff" size={20} />
+              <MaterialIcons name="star-outline" color="white" size={20} />
             </View>
             <Text style={styles.rowLabel}>Rate in App Store</Text>
             <View style={styles.rowSpacer} />
-            <ChevronRight color="#C6C6C6" size={20} />
           </TouchableOpacity>
         </View>
       </ScrollView>

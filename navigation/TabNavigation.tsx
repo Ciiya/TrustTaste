@@ -5,10 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
 import SecondPage from './app/Settings';
-
-import { Home, ScanBarcode, Settings } from 'lucide-react-native';
 import CameraManager from './app/camera/CameraManager';
 import FirstPage from './app/FirstPage';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,8 +26,8 @@ const TabNavigator = () => {
             component={FirstPage}
             options={{
               tabBarIcon: () => (
-                <View className="flex-1 flex-coll pt-2">
-                  <Home />
+                <View>
+                  <MaterialIcons name="person" color="black" size={26} />
                 </View>
               ),
             }}
@@ -38,8 +37,12 @@ const TabNavigator = () => {
             component={CameraManager}
             options={{
               tabBarIcon: () => (
-                <View className="flex-1 flex-coll pt-2">
-                  <ScanBarcode />
+                <View>
+                  <MaterialIcons
+                    name="qr-code-scanner"
+                    color="black"
+                    size={26}
+                  />
                 </View>
               ),
             }}
@@ -49,8 +52,8 @@ const TabNavigator = () => {
             component={SecondPage}
             options={{
               tabBarIcon: () => (
-                <View className="flex-1 flex-coll pt-2">
-                  <Settings />
+                <View>
+                  <MaterialIcons name="settings" color="black" size={26} />
                 </View>
               ),
             }}

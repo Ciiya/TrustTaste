@@ -1,13 +1,24 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": [
+      "esnext"
+    ],
+    "jsx": "react-native",
+    "allowJs": true,
+    "noEmit": true,
+    "isolatedModules": true,
     "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
     "paths": {
       "@/*": [
-        "./*"
-      ],
-      "tailwind.config": [
-        "./tailwind.config.js"
+        "*"
       ]
     }
   },
@@ -15,7 +26,7 @@
     "src",
     "./**/*.ts",
     "./**/*.tsx",
-    "types/env.d.ts",
-    "nativewind-env.d.ts"
-  ]
+    "types/env.d.ts"
+  ],
+  "extends": "expo/tsconfig.base"
 }

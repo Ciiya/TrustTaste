@@ -1,5 +1,6 @@
-import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
-import React, { useState } from 'react';
+import React from 'react';
+import { CameraView, useCameraPermissions } from 'expo-camera';
+import { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import AlergenicsModal from './AlergenicsModal';
 

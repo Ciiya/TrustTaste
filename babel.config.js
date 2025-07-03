@@ -3,9 +3,7 @@ module.exports = function (api) {
 
   return {
     presets: [
-      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
-      //["@babel/preset-env", { loose:true }],
-      "nativewind/babel",
+      "babel-preset-expo",
       "@babel/preset-react",
       "@babel/preset-typescript"
     ],
@@ -28,7 +26,7 @@ module.exports = function (api) {
           root: ["./"],
           alias: {
             "@": "./",
-            "tailwind.config": "./tailwind.config.js"
+          
           }
         }
       ],
